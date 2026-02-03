@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Future of Music</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      /*background: linear-gradient(135deg, #120018, #520366);*/
+      /*background: linear-gradient(182deg,rgba(35, 7, 51, 1) 64%, rgba(75, 0, 118, 1) 90%, rgba(75, 0, 118, 1) 100%);*/
+      background-color: rgb(9, 2, 41);
+      background: radial-gradient(circle at top,rgb(48, 37, 97) 0%, rgba(9, 2, 38, 1) 60%); 
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    /* ================= NAVBAR ================= */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(18, 0, 24, 0.85);
+      background: rgba(10, 2, 41, 0.904);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 8%;
+    }
+
+    .logo a{
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #9a81ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #b84cff;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: radial-gradient(circle at top, #2a1f57, #0A0229) 50%;
+      background: radial-gradient(circle at top,rgb(48, 37, 97) 0%, rgba(9, 2, 38, 1) 60%);
+      padding-top: 80px;
+
+  position: relative;
+  min-height: 100vh;
+  background-image: url("banner.png"); /* your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+    }
+
+    /* Dark overlay for readability */ /*
+.home-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at right top,rgba(48, 37, 97, 0.24) 20%, rgba(9, 2, 38, 1) 80%);
+  z-index: 1;
+} */
+
+
+/* Content on top */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+  margin-left: ;
+  width: 1600px;
+}
+
+    .hero h1 {
+      font-size: 6rem;
+      background: linear-gradient(90deg, #ffffff, #b84cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeUp 1.2s ease;
+    }
+
+
+    .hero h4 {
+      font-size: 1.5rem;
+      margin:0;
+      background: linear-gradient(90deg, #ffffff, #b84cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeUp 1.2s ease;
+    }
+
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #d8b7ff;
+      animation: fadeUp 1.8s ease;
+    }
+
+    /* ================= PRODUCTS ================= */
+    h2 {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .hero h3 {
+      font-size:3rem;
+      animation: fadeUp 1.8s ease;
+      background: linear-gradient(90deg, #ffffff, #b84cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #products{
+      background-color: #20183d;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border:1px solid #ffffff1a;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: 0.5s;
+    }
+
+    .card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 0 15px #A579D9;
+      box-shadow:0 15px 35px rgb(54, 42, 122);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+/* ===== INLINE CATEGORY SECTION ===== */
+.categories-inline {
+  padding: 60px 8%;
+}
+
+.categories-inline h2 {
+  margin-bottom: 20px;
+  color: #e6ccff;
+}
+
+/* Desktop layout */
+.categories-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Category item */
+.cat-item {
+  padding: 12px 26px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  backdrop-filter: blur(10px);
+  transition: 
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cat-item:hover {
+  background: linear-gradient(135deg, #a64dff, #ff4fd8);
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(255,79,216,0.6);
+}
+
+
+    /* ================= NEWS ================= */
+    .news-list {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .news-item {
+      padding: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .news-item span {
+      font-size: 0.85rem;
+      color: #c38cff;
+    }
+
+    /* ================= BIO ================= */
+    .bio-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .video-box {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .video-box img {
+      width: 100%;
+    }
+
+    .play-btn2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #a64dff;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+
+
+/* ===== AUDIO PLAYER ===== */
+.tracks{
+  max-width:900px;
+  margin:auto;
+}
+
+.track{
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(12px);
+  border-radius:18px;
+  padding:15px;
+  margin-bottom:30px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  border:1px solid #ffffff1a;
+ /* box-shadow:0 0 20px rgb(77, 60, 153) */
+}
+
+.play-btn{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#a64dff,#ff4fd8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  cursor:pointer;
+  flex-shrink:0;
+}
+
+.track-info{
+  flex:1;
+}
+
+.track-info h3{
+  font-size:1rem;
+  margin-bottom:8px;
+  color:#e3c9ff
+}
+
+.progress{
+  width:100%;
+  height:6px;
+  background:rgba(255,255,255,.2);
+  border-radius:10px;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.progress-bar{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#a64dff,#ff4fd8);
+}
+
+.time{
+  font-size:.8rem;
+  color:#caa9ff;
+  margin-top:6px;
+  display:flex;
+  justify-content:space-between
+  }
+
+audio{display:none}
+
+/* ===== BUY / DOWNLOAD BUTTONS ===== */
+.track-actions{
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+  flex-wrap:wrap;
+}
+
+.track-actions a{
+  padding:8px 16px;
+  border-radius:20px;
+  font-size:.85rem;
+  text-decoration:none;
+  color:#fff;
+  transition:.3s;
+  white-space:nowrap;
+}
+
+.track-actions2{
+  display:block;
+  gap:12px;
+  margin-top:12px;
+  flex-wrap:wrap;
+}
+
+.track-actions2 a{
+  padding:10px 50px;
+  border-radius:20px;
+  font-size:.85rem;
+  text-decoration:none;
+  color:#fff;
+  transition:.3s;
+  white-space:nowrap;
+}
+
+.buy-btn{
+  background:linear-gradient(135deg,#ff4fd8,#a64dff);
+}
+
+.buy-btn:hover{
+  box-shadow:0 0 10px #ff4fd8;
+}
+
+.download-btn{
+  border:1px solid #a64dff;
+  color:#d8b7ff;
+}
+
+.download-btn:hover{
+  background:#a64dff;
+  color:#fff;
+}
+
+
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+  background: linear-gradient(180deg, #302755b0, #03000f);
+  padding: 80px 8%;
+  color: #fff;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #bfa3ff;
+  font-size: 0.9rem;
+  margin-bottom: 50px;
+}
+
+/* Grid Layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Boxes */
+.contact-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+}
+
+.contact-box h3 {
+  margin-bottom: 15px;
+  color: #c77dff;
+}
+
+.contact-box p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.contact-box span {
+  color: #fff;
+}
+
+/* Social Links */
+.social-links a {
+  display: inline-block;
+  margin-right: 12px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #c77dff;
+}
+
+
+
+
+/* ===== SOCIAL ICON LINKS ===== */
+.social-links-icon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.social-links-icon a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 30px;
+  border:1px solid #ffffff1a;
+  backdrop-filter: blur(1px);
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.85rem;
+  transition: 0.5s ease;
+}
+
+.social-links-icon a:hover {
+  background: linear-gradient(135deg, #a64dff, #ff4fd8);
+  transform: translateY(-4px);
+}
+
+/* PNG Icon */
+.social-links-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+
+
+/* Quick Links */
+.quick-links {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-links li {
+  margin-bottom: 8px;
+}
+
+.quick-links a {
+  color: #ddd;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.quick-links a:hover {
+  color: #c77dff;
+}
+
+
+    /* ================= WHATSAPP ================= */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      text-decoration: none;
+      z-index: 100;
+  background: rgb(0, 180, 39);
+  border-radius: 30px;
+  border:1px solid #02380000;
+  backdrop-filter: blur(1px);
+  box-shadow: rgba(50, 50, 93, 0.527) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.411) 0px 18px 36px -18px inset;
+    }
+
+    /* ================= ANIMATION ================= */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ================= MOBILE ================= */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+
+      .hero{
+  position: relative;
+  min-height: 100vh;
+  background-image: url("image/banner2.png"); /* your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+        text-align: center;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: #0a0031cb;
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        width: 200px;
+        padding: 20px; 
+       
+
+    border-radius: 1px;
+    gap: 18px;    
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    pointer-events: none;
+
+    transition: 
+    opacity 0.35s ease,
+    transform 0.35s ease;
+      }
+
+      .nav-links.active {
+        display: flex;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+      }
+
+      .nav-links a{
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+
+    opacity: 0;
+    transform: translateX(10px);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+}
+
+  /* Stagger effect */
+  .nav-links.active a {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .nav-links.active a:nth-child(1) { transition-delay: 0.05s; }
+  .nav-links.active a:nth-child(2) { transition-delay: 0.1s; }
+  .nav-links.active a:nth-child(3) { transition-delay: 0.15s; }
+  .nav-links.active a:nth-child(4) { transition-delay: 0.2s; }
+  .nav-links.active a:nth-child(5) { transition-delay: 0.25s; }
+
+/* Hover color */
+.nav-links a:hover{
+  color: #b84cff;
+}
+
+/* Underline animation */
+.nav-links a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #a64dff, #ff4fd8);
+  transition: width 0.35s ease;
+}
+
+/* On hover */
+.nav-links a:hover::after{
+  width: 100%;
+}
+
+/* Active link */
+.nav-links a.active{
+  color: #ff4fd8;
+}
+
+.nav-links a.active::after{
+  width: 100%;
+}
+
+.categories-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-behavior: smooth;
+  }
+
+  .categories-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cat-item {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    padding: 10px 20px;
+  }
+      .bio-content {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-section {
+    padding: 60px 6%;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+
+  /* icon-only on mobile */ 
+  .social-links-icon {
+  justify-content: center;
+  }
+
+  .social-links-icon a span {
+  display: none; 
+  }
+
+  .social-links-icon a {
+  padding: 10px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+
+}
+
+/* ===== PRELOADER ===== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #12001f, #05000a);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Loader bars */
+.loader {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.loader span {
+  width: 8px;
+  height: 30px;
+  background: linear-gradient(180deg, #a64dff, #ff4fd8);
+  border-radius: 6px;
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+.loader span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.loader span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+/* Loading text */
+#preloader p {
+  font-size: 0.85rem;
+  color: #d6bfff;
+  letter-spacing: 1px;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <p>Loading Beats...</p>
+</div>
+
+
+<!-- NAVBAR -->
+<header>
+  <nav class="nav">
+    <div class="logo"><a href="index.html">Nj Wave Studio</a></div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#products">Product</a>
+      <a href="#categories">Category</a>
+      <a href="#news">News</a>
+      <a href="#bio">Biography</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="home-overlay"></div>
+
+  <div class="hero-content">
+    <h1>FUTURE OF MUSIC</h1>
+    <h4>WITH</h4>
+    <h3>NJ WAVE STUDIO</h3>
+    <p>BRINGING HAPPINESS THROUGH SOUND</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <h2>Popular Products</h2>
+  <div class="product-grid">
+    <div class="card">
+      <img src="F:\Web Development\NJ WAVE STUDIO WEB\image\1.png">
+      <h3>Studio Headphones</h3>
+      <p>Professional sound quality.</p>
+           <div class="track-actions2">
+              <a href="https://wa.me/94771684474?text=hello Dear, I want to buy Hip-Hop – Street Flow" target="_blank" class="buy-btn">Buy Beat</a>
+           </div>
+    </div>
+    <div class="card">
+      <img src="F:\Web Development\NJ WAVE STUDIO WEB\image\2.png">
+      <h3>DJ Controller</h3>
+      <p>Take control of your beats.</p>
+           <div class="track-actions2">
+              <a href="https://wa.me/94771684474?text=hello Dear, I want to buy Hip-Hop – Street Flow" target="_blank" class="buy-btn">Buy Beat</a>
+           </div>
+    </div>
+    <div class="card">
+      <img src="F:\Web Development\NJ WAVE STUDIO WEB\image\3.png">
+      <h3>Wireless Speaker</h3>
+      <p>Powerful bass output.</p>
+           <div class="track-actions2">
+              <a href="https://wa.me/94771684474?text=hello Dear, I want to buy Hip-Hop – Street Flow" target="_blank" class="buy-btn">Buy Beat</a>
+           </div>
+    </div>
+    <div class="card">
+      <img src="F:\Web Development\NJ WAVE STUDIO WEB\image\4.png">
+      <h3>Studio Mic</h3>
+      <p>Record like a pro.</p>
+           <div class="track-actions2">
+              <a href="https://wa.me/94771684474?text=hello Dear, I want to buy Hip-Hop – Street Flow" target="_blank" class="buy-btn">Buy Beat</a>
+           </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY -->
+<section id="categories" class="categories-inline">
+  <h2>Browse Categories</h2>
+
+  <div class="categories-row">
+    <a href="category.html#trap" class="cat-item">Trap</a>
+    <a href="category.html#edm" class="cat-item">EDM</a>
+    <a href="category.html#lofi" class="cat-item">Lo-Fi</a>
+    <a href="category.html#hiphop" class="cat-item">Hip-Hop</a>
+    <a href="category.html#drill" class="cat-item">Drill</a>
+    <a href="category.html#afro" class="cat-item">Afro Beats</a>
+    <a href="category.html#reggae" class="cat-item">Reggae</a>
+  </div>
+</section>
+
+
+
+<!-- NEWS -->
+<section id="news">
+  <h2>News & Updates</h2>
+  <div class="news-list">
+    <div class="news-item">
+      <h3>New Album Release</h3>
+      <span>Jan 2026</span>
+      <p>Experience futuristic sound.</p>
+    </div>
+    <div class="news-item">
+      <h3>Live DJ Event</h3>
+      <span>Feb 2026</span>
+      <p>One night. Unlimited vibes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section id="bio">
+  <h2>Biography</h2>
+  <div class="bio-content">
+    <p>
+      A modern music brand focused on innovation, creativity,
+      and immersive sound experiences for the future.
+    </p>
+    <div class="video-box" onclick="alert('Add YouTube modal here')">
+      <img src="F:\Web Development\NJ WAVE STUDIO WEB\image\1.png">
+      <div class="play-btn2">▶</div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="tracks">
+<h2>Latest Tracks</h2>
+
+<div class="tracks">
+  <div class="track">
+    <div class="play-btn">▶</div>
+    <div class="track-info">
+      <h3>Trap Beat – Night Drive</h3>
+      <div class="progress"><div class="progress-bar"></div></div>
+      <div class="time"><span>0:00</span><span>--:--</span></div>
+    </div>
+    <audio src="F:\01. FL STUDIO\MY SONGS\Sample Beat projects\Calm Beat\Track Sample _01.mp3"></audio>
+  </div>
+
+
+  <div class="track">
+    <div class="play-btn">▶</div>
+    <div class="track-info">
+      <h3>Trap Beat – Night Drive</h3>
+      <div class="progress"><div class="progress-bar"></div></div>
+      <div class="time"><span>0:00</span><span>--:--</span></div>
+    </div>
+    <audio src="F:\01. FL STUDIO\MY SONGS\Sample Beat projects\Calm Beat\Track Sample _01.mp3"></audio>
+  </div>
+
+
+<!-- TRACK 4 -->
+  <div class="track">
+    <div class="play-btn">▶</div>
+
+    <div class="track-info">
+      <h3>Hip-Hop – Street Flow</h3>
+
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+
+      <div class="time">
+        <span>0:00</span>
+        <span>--:--</span>
+      </div>
+
+      <div class="track-actions">
+        <a href="https://wa.me/94771684474?text=hello Dear, I want to buy Hip-Hop – Street Flow" 
+           target="_blank" class="buy-btn">Buy Beat</a>
+
+        <a href="https://www.w3schools.com/html/horse.mp3" download class="download-btn">Download</a>
+      </div>
+    </div>
+
+    <audio src="track4.mp3"></audio>
+  </div>
+</div>
+</section>
+
+<section id="contact" class="contact-section">
+
+  <h2 class="section-title">Get In Touch</h2>
+  <p class="section-subtitle">
+    Let’s work together. Reach out for beats, collaborations, or questions.
+  </p>
+
+  <div class="contact-grid">
+
+    <!-- Contact Info -->
+    <div class="contact-box">
+      <h3>Contact Info</h3>
+      <p>📧 Email: <span>beatsworld@email.com</span></p>
+      <p>📞 Phone: <span>+94 77 168 4474</span></p>
+      <p>📍 Location: <span>Sri Lanka</span></p>
+    </div>
+
+    <!-- Social Media -->
+    <div class="contact-box">
+      <h3>Follow Me</h3>
+    
+      <div class="social-links-icon">
+    
+        <a href="#" target="_blank">
+          <img src="image/icons/instagram.png" alt="Instagram">
+          <span>Instagram</span>
+        </a>
+    
+        <a href="#" target="_blank">
+          <img src="image/icons/youtube.png" alt="YouTube">
+          <span>YouTube</span>
+        </a>
+    
+        <a href="#" target="_blank">
+          <img src="image/icons/facebook.png" alt="Facebook">
+          <span>Facebook</span>
+        </a>
+    
+        <a href="#" target="_blank">
+          <img src="image/icons/whatsapp.png" alt="whatsapp">
+          <span>whatsapp</span>
+        </a>
+    
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="contact-box">
+      <h3>Quick Links</h3>
+      <ul class="quick-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#beats">Beats World</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+
+    
+
+  </div>
+
+</section>
+
+
+<a href="https://wa.me/94771684474?text=Hi, I'm looking interested in your music. Can I get more info?" class="whatsapp" target="_blank">💬</a>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+
+/* ===== SMOOTH SCROLL WITH OFFSET ===== */
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+
+    const targetId = link.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    const headerOffset = 80; // navbar height
+    const elementPosition = targetSection.offsetTop;
+    const offsetPosition = elementPosition - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+
+    // close mobile menu after click
+    document.getElementById("navLinks").classList.remove("active");
+  });
+});
+ 
+const tracks=document.querySelectorAll(".track");
+let currentAudio=null;
+
+tracks.forEach(track=>{
+  const btn=track.querySelector(".play-btn");
+  const audio=track.querySelector("audio");
+  const bar=track.querySelector(".progress-bar");
+  const progress=track.querySelector(".progress");
+  const time=track.querySelectorAll(".time span");
+
+  audio.onloadedmetadata=()=>{
+    time[1].textContent=format(audio.duration);
+  };
+
+  btn.onclick=()=>{
+    if(currentAudio && currentAudio!==audio){
+      currentAudio.pause();
+      currentAudio.parentElement.querySelector(".play-btn").textContent="▶";
+    }
+    if(audio.paused){
+      audio.play();
+      btn.textContent="❚❚";
+      currentAudio=audio;
+    }else{
+      audio.pause();
+      btn.textContent="▶";
+    }
+  };
+
+  audio.ontimeupdate=()=>{
+    bar.style.width=(audio.currentTime/audio.duration*100)+"%";
+    time[0].textContent=format(audio.currentTime);
+  };
+
+  progress.onclick=(e)=>{
+    const percent=e.offsetX/progress.offsetWidth;
+    audio.currentTime=percent*audio.duration;
+  };
+});
+
+function format(sec){
+  const m=Math.floor(sec/60);
+  const s=Math.floor(sec%60).toString().padStart(2,"0");
+  return `${m}:${s}`;
+}
+
+
+
+
+
+
+const navLinks = document.querySelectorAll(".nav-links a");
+const sections = document.querySelectorAll("section");
+
+/* Active on click */
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
+/* Active on scroll */
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+
+
+
+
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    preloader.style.opacity = "0";
+    preloader.style.pointerEvents = "none";
+
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 500);
+  });
+</script>
+
+</body>
+</html>
